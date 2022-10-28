@@ -1,0 +1,25 @@
+body {
+    margin: auto;
+    width: 675;
+    padding: 10;
+}
+
+.turf{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+
+}
+
+.logo
+{
+
+   display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}

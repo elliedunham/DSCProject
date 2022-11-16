@@ -16,9 +16,14 @@ z-index: -1;
 
 }
 
-body {
-    background-color: whitesmoke;
+section, center, #graphtitle {
+
     margin: auto;
     width: 675;
     padding: 10;
+}
+
+svg {
+  display: block;
+    margin:auto;
 }

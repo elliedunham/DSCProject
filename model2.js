@@ -1,6 +1,6 @@
 //start off
-var model1Promise = d3.json("model2.json")
-model1Promise.then(function(game)
+var model2Promise = d3.json("model2.json")
+model2Promise.then(function(game)
 {
     console.log(game);
     console.log(game[1].GameID);

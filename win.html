@@ -22,28 +22,31 @@
         <div class="box-main">
             <div class="firstHalf">
                 <h2 class="text-big" id="web">
-                    About the Model
+                    About the Models
                 </h2>
 
                 <p class="text-small">
-                    The win probability model is a logistic regression model. My model has an accuracy score of 87%. All variables are considered significant.
+                    The win probability models are logistic regression models.
                 </p>
-                <p>win probability = MinutesRemaining + homeNumOfWinsBefore:homeNumOfGamesBefore+ visitorNumOfWinsBefore:visitorNumOfGamesBefore + homeTeamScoreDif + homeShotMinCount:awaySavesMinCount + homeSavesMinCount:awayShotMinCount + awayCornerMinCount  + homeSavesCount:awayShotCount + homeShotCount:awaySavesCount + homeCardCount + awayCardCount + homeCornerCount + awayCornerCount + saaGame</p>
-                <p>Factors considered: </p>
-                <ul>
-                    <li>Minutes left in the game</li>
-                    <li>Number of games won and games played by the home team before the game</li>
-                    <li>Number of games won and games played by the away team before the game</li>
-                    <li>Home team score differential at each minute</li>
-                    <li>Number of home team shots each minute (total and per minute)</li>
-                    <li>Number of away team shots each minute (total and per minute)</li>
-                    <li>Number of home team saves each minute (total and per minute)</li>
-                    <li>Number of away team saves each minute (total and per minute)</li>
-                    <li>Number of home team corners each minute (total and per minute)</li>
-                    <li>Number of away team corners each minute (total and per minute)</li>
+                <h4>Model 1</h4>
+                <table>
+                    <tr>
+                        <th>Predictor </th>
+                        <th>Coefficient</th>
+                        <th>P-value</th>
+                    </tr>
+                    <tr>
+                        <td>Minutes Remaining</td>
+                        <td> </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Home Team Score Differential</td>
+                        <td> </td>
+                        <td></td>
+                    </tr>
 
-
-                </ul>
+                </table>
 
 
             </div>
@@ -79,7 +82,7 @@
     </section>
 
 </body>
-<h3 id = graphtitle> Model 1</h3>
+<h3 id = graphtitle> Model 1 </h3>
 <svg  id =svgSpread1>
 
 

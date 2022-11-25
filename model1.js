@@ -72,7 +72,7 @@ var dataset = d3.nest()
         .append("path")
         .attr("d", function(d){
                 return d3.line()
-                        .x(function(d) {return xScale(d.MinutesRemaining)} )
+                        .x(function(d) {return xScale(d.OldMinutesRemaining)} )
                         .y(function(d) {return yScale(d.WinProb)})(d.values)
                 })
 

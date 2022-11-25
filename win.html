@@ -17,37 +17,30 @@
 </head>
 
 <body width ='400'>
-
     <section class="aboutmodel">
         <div class="box-main">
             <div class="firstHalf">
                 <h2 class="text-big" id="web">
-                    About the Models
+                    About the Project
                 </h2>
-
+                <div class="secondHalf">
+                <h3 class="text-big" id="program">
+                    Process
+                </h3>
+                <h4>1: Data Scraping</h4>
                 <p class="text-small">
-                    The win probability models are logistic regression models.
+                    I began this work in the summer 2020. I initally worked on a team lead by Dr. Heath. The team first begin with writing python scripts to web scrape play-by-play information from athletic websites.
+                    I used the package BeautifulSoup to web scrape. Because a lot of the work was done in summer 2020, when I began to work on the project again in Fall 2022, I only needed to run the scripts againt to have raw data for the most recent seasons.
                 </p>
-                <h4>Model 1</h4>
-                <table>
-                    <tr>
-                        <th>Predictor </th>
-                        <th>Coefficient</th>
-                        <th>P-value</th>
-                    </tr>
-                    <tr>
-                        <td>Minutes Remaining</td>
-                        <td> </td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Home Team Score Differential</td>
-                        <td> </td>
-                        <td></td>
-                    </tr>
+                <h4>2: Cleaning the raw data</h4>
+                <p>The raw data from athletic websites includes the play-by-play descriptions and game headers. </p>
+                <p>The play-by-play tables included time of play, type of play, and the team responsible for the play. The header data included the location of the game, who was the home team, each teams' win-tie-loss records as well as the record in the southern athletic association. </p>
+                <p>From the raw data, I wrote a few scripts that parsed through the play-by-play table counting the number of shots, substititutions, corners, cards, and saves each team had throughtout each minute of the game.</p>
+                <h4>3: Building the Models</h4>
 
-                </table>
+                <h4>4: Evaluating the Models</h4>
 
+            </div>
 
             </div>
         </div>
@@ -55,26 +48,172 @@
 
     <section class="secondsection">
         <div class="box-main">
-            <div class="secondHalf">
-                <h2 class="text-big" id="program">
-                    Process
+            <div class="firstHalf">
+                <h2 class="text-big" id="web">
+                   Predictors
                 </h2>
-                <p class="text-small">
-                    Scrapped play by play data from website
-                </p>
+            <h4>Model 1</h4>
+                <table>
+                    <tr>
+                        <th>Predictor </th>
+                        <th>Coefficient</th>
+                        <th>P-value</th>
+                    </tr>
+                    <tr>
+                        <td>Intercept</td>
+                        <td> .2902</td>
+                        <td> .000</td>
+                    </tr>
+                    <tr>
+                        <td>Minutes Remaining
+                        interected with Home Team Score Differential</td>
+                        <td> -.3570 </td>
+                        <td> .000</td>
+                    </tr>
+                    <tr>
+                        <td>Home Team Total Wins interacted with Home Team Total Games</td>
+                        <td>.0164 </td>
+                        <td> .000</td>
+                    </tr>
 
+                    <tr>
+                        <td>Visting Team Total Wins interacted with Visiting Team Total Games</td>
+                        <td>-.0176 </td>
+                        <td> .000</td>
+                    </tr>
+                    <tr>
+                        <td>Visting Shots on Goal interacted with Visting Shot Percentage</td>
+                        <td>-1.2935 </td>
+                        <td> .000</td>
+                    </tr>
+                     <tr>
+                        <td>Home Shots on Goal interacted with Home Shot Percentage</td>
+                        <td>1.3503 </td>
+                        <td> .000</td>
+                    </tr>
+                    <tr>
+                        <td>Visting Saves interacted with Visting Save Percentage</td>
+                        <td>-.0114 </td>
+                        <td> .039</td>
+                    </tr>
+                     <tr>
+                        <td>Home Saves interacted with Home Save Percentage</td>
+                        <td>-.0638 </td>
+                        <td> .000</td>
+                    </tr>
+                    <tr>
+                        <td>Home Number of Corners</td>
+                        <td>.0228 </td>
+                        <td> .000</td>
+                    </tr>
+                     <tr>
+                        <td>Home Substitution Count</td>
+                        <td>-.0128 </td>
+                        <td> .000</td>
+                    </tr>
+                    <tr>
+                        <td>Visting Substitution Count</td>
+                        <td>.0372 </td>
+                        <td> .000</td>
+                    </tr>
+                     <tr>
+                        <td>Home Card Count</td>
+                        <td>.0994 </td>
+                        <td> .002</td>
+                    </tr>
+                    <tr>
+                        <td>Visting Card Count</td>
+                        <td>.1048 </td>
+                        <td> .002</td>
+                    </tr>
+                    <tr>
+                        <td>Is SAA Game</td>
+                        <td>4.8702 </td>
+                        <td> .000</td>
+                    </tr>
+                </table>
+            <h4>Model 2</h4>
+                <table>
+                    <tr>
+                        <th>Predictor</th>
+                        <th>Coefficient</th>
+                        <th>P-value</th>
+                    </tr>
+                     <tr>
+                        <td>Intercept</td>
+                        <td> .3131</td>
+                        <td> .000</td>
+                    </tr>
+                    <tr>
+                        <td>Minutes Remaining
+                        interected with Home Team Score Differential</td>
+                        <td> 1.4382 </td>
+                        <td> .000</td>
+                    </tr>
+                    <tr>
+                        <td>Home Team Total Wins interacted with Home Team Total Games</td>
+                        <td>.0163 </td>
+                        <td> .000</td>
+                    </tr>
+                    <tr>
+                        <td>Visting Team Total Wins interacted with Visiting Team Total Games</td>
+                        <td>-.0173 </td>
+                        <td> .000</td>
+                    </tr>
+                    <tr>
+                        <td>Home Number of Saves</td>
+                        <td>-.0319 </td>
+                        <td> .004</td>
+                    </tr>
+                    <tr>
+                        <td>Visiting Number of Shots</td>
+                        <td>-.0361 </td>
+                        <td> .000</td>
+                    </tr>
+                    <tr>
+                        <td>Home Number of Shots</td>
+                        <td>0.260 </td>
+                        <td> .000</td>
+                    </tr>
+                    <tr>
+                        <td>Visiting Number of Cards</td>
+                        <td>.1522 </td>
+                        <td> .000</td>
+                    </tr>
+                    <tr>
+                        <td>Visiting Number of Cprners</td>
+                        <td>-.0216 </td>
+                        <td> .003</td>
+                    </tr>
+                    <tr>
+                        <td>Is SAA Game</td>
+                        <td>5.6484 </td>
+                        <td> .000</td>
+                    </tr>
 
+                </table>
             </div>
         </div>
     </section>
 
     <section class="section">
         <div class="paras">
-            <h2 class="sectionTag text-big">Factors Considered</h2>
-
-            <p class="sectionSubTag text-small">
-                timing, shot goals
-            </p>
+            <h2 class="sectionTag text-big">About the Predictors</h2>
+            <table>
+            <tr>
+                <th>Predictor</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Minutes Remaining</td>
+                <td>This variable is the minutes left in the game. So at the very beginning of the game this variable will be at 70 or 60 and decrease by 1. Before 2019, college field hockey played two 35 minute halves. In 2019, the timing changed to 4 15 minutes quarters.
+                </td>
+            </tr>
+            <tr>
+                <td>Home Team Score Differential</td>
+                <td>This variable is details the home teams score differential at the minute. If the home team has a score of 3 and the visting team has a score of 2, then the home teams score differential will be 1. </td>
+            </tr>
+            </table>
 
 
         </div>

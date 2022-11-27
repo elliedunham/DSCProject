@@ -37,8 +37,13 @@
                 <p>The play-by-play tables included time of play, type of play, and the team responsible for the play. The header data included the location of the game, who was the home team, each teams' win-tie-loss records as well as the record in the southern athletic association. </p>
                 <p>From the raw data, I wrote a few scripts that parsed through the play-by-play table counting the number of shots, substititutions, corners, cards, and saves each team had throughtout each minute of the game.</p>
                 <h4>3: Building the Models</h4>
+                <p>I decided to build logistic regression models due to the many predicator variables I anticipated including. I used jupyter notebook to run my python scripts and used the statsmodel package to build the logistic models. </p>
+                    <p> I started with a simple model which included all the predictors in the model. After looking at each variables coefficient and p-values, I then started to include interaction terms. </p>
+                    <p>In total, I built about 5-6 models with different variations of interaction terms and variables. </p>
 
                 <h4>4: Evaluating the Models</h4>
+                    <p> I evaluated my models by looking at the the accuracy score.</p>
+                    <p> I conducted a Hosmer-Lemeshow test. The test is a statistical test for goodness of fit for my logistic regression models </p>
 
             </div>
 
@@ -211,7 +216,49 @@
             </tr>
             <tr>
                 <td>Home Team Score Differential</td>
-                <td>This variable is details the home teams score differential at the minute. If the home team has a score of 3 and the visting team has a score of 2, then the home teams score differential will be 1. </td>
+                <td>This variable is the home teams score differential at the minute. If the home team has a score of 3 and the visting team has a score of 2, then the home teams score differential will be 1. </td>
+            </tr>
+            <tr>
+                <td> Number of Wins</td>
+                <td> This is the number of wins a team has so far in the season before the game. </td>
+            </tr>
+            <tr>
+                <td> Number of Games</td>
+                <td> This is the number of games a team has played so far in the season before the game. </td>
+
+            </tr>
+            <tr>
+            <td>Number of Shots</td>
+            <td> This is the total number of shots a team has taken at that minute in the game . </td>
+            </tr>
+            <tr>
+            <td>Shot Percentage</td>
+            <td> The likelihood of a shot being a goal. This variable was calculated by first determining shots on goal(total shots-(goals+ visting team saves)) divided by the number of goals.  </td>
+            </tr>
+            <tr>
+            <td>Number of Saves</td>
+            <td> This is the total number of shots a team has saved at that minute in the game. </td>
+            </tr>
+            <tr>
+            <tr>
+            <td>Save Percentage</td>
+            <td> The likelihood of a shot being saved. This variable was calculated by first determining shots on goal(total shots-(goals+ visting team saves)) divided by the total number of saves.  </td>
+            </tr>
+            <tr>
+            <td>Number of Substitutions</td>
+            <td> This is the total number of substitutions a team has made at that minute in the game . </td>
+            </tr>
+            <tr>
+            <td>Number of Cards</td>
+            <td> This is the total number of cards a team has been given at that minute in the game . </td>
+            </tr>
+            <tr>
+            <td>Number of Corners</td>
+            <td> This is the total number of corners a team has earned at that minute in the game . </td>
+            </tr>
+            <tr>
+            <td> Is SAA Game?</td>
+                <td> SAA Game means the home and visiting team are both a part of the Southern Athletic Conference. This variable is either 1 if they are both SAA teams or 0 if not. </td>
             </tr>
             </table>
 
